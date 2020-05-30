@@ -1,0 +1,141 @@
+* {
+    margin : 0;
+    padding :0;
+}
+
+/*///////////////////////////|BODY|*/
+body {
+    background-image: linear-gradient(to bottom right, #cccccc, #f7f7f7, #ffffff);
+    width: 100vw;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/*///////////////////////////|WRAPPER|*/
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+/*///////////////////////////|MAIN BODY|*/
+.wrapper .logoBox {
+    pointer-events: none;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 200px;
+}
+
+.wrapper .linkBox {
+    color: #301818;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+}
+/*///////////////////////////|LOGOBOX|*/
+.logoBox .logoImg {
+    width: 520;
+    height: 112;
+}
+
+/*///////////////////////////|LINKBOX|*/
+.linkBox a:link {
+    color: #301818;
+    text-decoration: none;
+}
+
+.linkBox a:visited {
+    color:#6b6b6b;
+    text-decoration: none;
+}
+
+.linkBox a:hover {
+    color:#27422e;
+}
+
+.linkBox a:active {
+    color: pink;
+}
+
+.linkBox .link {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+}
+
+.linkBox .link .linkSub {
+    width: 500px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+    display: grid;
+    color: #747474;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 20px 155px minmax(20px, 50px);
+    grid-template-areas:    "title title title title title"
+                            "image image image image image"
+                            "kontent kontent kontent kontent link";
+}
+
+.linkSub .linkTitle {
+    grid-area: title;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    text-align: left;
+    position: relative;
+    top: 4px;
+}
+
+.linkSub .linkImage {
+    grid-area: image;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+
+.linkSub .linkImage .image {
+    width: 225px;
+    height: 135px;
+    padding: 10px;
+}
+
+.linkSub .linkLink {
+    grid-area: link;
+    font-size: 16px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.linkSub .linkContent {
+    grid-area: kontent;
+    text-align: left;
+    margin-top: 10px;
+}
+
+/*///////////////////////////|RESPONSIVE|*/
+@media only screen and (max-width: 1025px) {
+    
+}
+
+/*///////////////////////////|SUB PAGE|*/
+body::before {
+        content: '';
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        border: 15px solid #30582b;
+        padding: 0px;
+
+}
