@@ -1,4 +1,4 @@
-* {
+    * {
     margin : 0;
     padding :0;
     box-sizing: border-box;
@@ -14,7 +14,6 @@ body {
 
 /*///////////////////////////|WRAPPER|*/
 .wrapper {
-
 }
 
 /*///////////////////////////|MAIN BODY|*/
@@ -36,14 +35,6 @@ body {
     -webkit-transition: opacity 0.3s;
 }
 
-.fadeIn {
-    opacity: 1;
-}
-
-.fadeOut {
-    opacity: 0;
-}
-
 .wrapper .gitLinker {
     width: 215px;
     height: 50px;
@@ -59,14 +50,24 @@ body {
     pointer-events: all;
 }
 
-.wrapper .logoBox {
-    pointer-events: none;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 30vh;
+.wrapper .beforeLogo {
+    height: 20vh;
 }
+
+.wrapper .logoBox {
+    position: sticky;
+    top: 20vh;
+    pointer-events: none;
+    width: 520px;
+    margin: auto;
+    /* top: 30%;
+    left: 50%;
+    margin-left: -260px;
+    margin-right: -56px;
+    z-index: 10;
+} */
+}
+
 
 .wrapper .linkBox {
     color: #301818;
@@ -120,17 +121,20 @@ body {
 
 /*///////////////////////////|LINKBOX|*/
 .linkBox .link {
-    height: 100vh;
-    display: grid;
-    justify-content: center;
+    height: 250px;
 }
 
-.linkBox .link:first-child {
-    height: 35vh;
+.wrapper .spacerBefore {
+    height: 10vh;
 }
 
-.linkBox .link:last-child {
-    height: 55vh;
+.wrapper .spacerAfter {
+    height: 50vh;
+}
+
+/*///////////////////////////|SPACER AFTER|*/
+.spacerAfter:last-child {
+    height: 20vh;
 }
 
 /*///////////////////////////|CONTENT BOX|*/
@@ -306,6 +310,35 @@ body {
 }
 
 /*///////////////////////////|RESPONSIVE|*/
-@media only screen and (max-width: 1025px) {
-    
+@media only screen and (max-width: 600px) {
+    .wrapper .logoBox {
+        position: unset;
+        width: 80%;
+    }
+
+    .logoBox .logoImg {
+        width: 100%;
+    }
+
+    .linkBox .link {
+        width: 225px;
+        height: auto;
+    }
+
+    .linkBox .link .linkSub {
+        width: 225px;
+        grid-template-columns: 185px 40px;
+        grid-template-rows: 30px 305px 40px;
+        grid-template-areas:    "title title"
+                                "image image"
+                                "kontent icons"
+    }
+
+    .linkSub .linkImage a:first-child .image{
+        margin: 10px 0 5px 0;
+    }
+
+    .linkSub .linkImage a:last-child .image{
+        margin: 5px 0 10px 0;
+    }
 }

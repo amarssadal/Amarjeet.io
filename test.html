@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.check {
+			width: 100px;
+			height: 10vh;
+			background-color: red;
+			color: white;
+			padding: 20px;
+		}
+
+			.spacerBefore {
+			height: 45vh;
+			width: 100px;
+			}
+
+			.spacerAfter {
+			height: 45vh;
+			width: 100px;
+			border-bottom: 1px solid black;
+			}
+
+			.bg {
+			position: fixed;
+			font-size: 100px;
+			color: #c9c9c9;
+			z-index: -100;
+			}
+
+			.fadeIn {
+			opacity: 1;
+			}
+
+			.fadeOut {
+			opacity: 0;
+			}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	<div class="bg">
+		BG
+	</div>
+	
+	<div class="spacerBefore">
+	</div>
+	<div class="check first">
+		FIRST
+	</div>
+	<div class="spacerAfter">
+	</div>
+	
+	<div class="spacerBefore">
+	</div>
+	<div class="check second">
+		SECOND
+	</div>
+	<div class="spacerAfter">
+	</div>
+	
+	<div class="spacerBefore">
+	</div>
+	<div class="check third">
+		THIRD
+	</div>
+	<div class="spacerAfter">
+	</div>
+	
+	<div class="spacerBefore">
+	</div>
+	<div class="check fourth">
+		FOURTH
+	</div>
+	<div class="spacerAfter">
+	</div>
+	
+	<div class="spacerBefore">
+	</div>
+	<div class="check fifth">
+		FIFTH
+	</div>
+	<div class="spacerAfter">
+	</div>
+	
+	<div class="spacerBefore">
+	</div>
+	<div class="check sixth">
+		SIXTH
+	</div>
+	<div class="spacerAfter">
+	</div>
+	<script>
+		const sections = document.querySelectorAll('.check');
+		const bg = document.querySelector('.bg');
+		let scrollTotal = window.scrollY;
+		
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				className = entry.target.classList[1];
+				if (entry.isIntersecting) {
+					if (className === 'first') {
+						bg.innerHTML = 'FIRST';
+						scrollTotal = window.scrollY;
+					} else if (className === 'second') {
+						bg.innerHTML = 'SECOND';
+						scrollTotal = window.scrollY;
+					} else if (className === 'third') {
+						bg.innerHTML = 'THIRD';
+						scrollTotal = window.scrollY;
+					} else if (className === 'fourth') {
+						bg.innerHTML = 'FOURTH';
+						scrollTotal = window.scrollY;
+					} else if (className === 'fifth') {
+						bg.innerHTML = 'FIFTH';
+						scrollTotal = window.scrollY;
+					} else if (className === 'sixth') {
+						bg.innerHTML = 'SIXTH';
+						scrollTotal = window.scrollY;
+					}
+				}
+			})
+		});
+
+		sections.forEach(section => {
+			observer.observe(section);
+		});
+
+		window.addEventListener('scroll', () => {
+			const height = window.innerHeight;
+			const scrollY = window.scrollY - scrollTotal;
+			console.log(scrollY, window.innerHeight);
+
+			let fadePercent = (window.innerHeight/2) - scrollY;
+			fadePercent = fadePercent / window.innerHeight;
+			console.log(fadePercent);
+		});
+
+	</script>
+</body>
+</html>
